@@ -14,14 +14,6 @@
             >
                 Sign in
             </div>
-            <div class="mt-0.5 flex items-baseline font-medium">
-                <div>Don't have an account?</div>
-                <a
-                    class="ml-1 text-primary-500 hover:underline"
-                    [routerLink]="['/sign-up']"
-                    >Sign up
-                </a>
-            </div>
 
             <!-- Alert -->
             @if (showAlert) {
@@ -89,7 +81,7 @@
                 </mat-form-field>
 
                 <!-- Actions -->
-                <div
+                <!-- <div
                     class="mt-1.5 inline-flex w-full items-center justify-between"
                 >
                     <mat-checkbox
@@ -104,7 +96,7 @@
                         [routerLink]="['/forgot-password']"
                         >Forgot password?
                     </a>
-                </div>
+                </div> -->
 
                 <!-- Submit button -->
                 <button
@@ -124,36 +116,9 @@
                         ></mat-progress-spinner>
                     }
                 </button>
-
-                <!-- Separator -->
-                <div class="mt-8 flex items-center">
-                    <div class="mt-px flex-auto border-t"></div>
-                    <div class="text-secondary mx-2">Or continue with</div>
-                    <div class="mt-px flex-auto border-t"></div>
-                </div>
-
-                <!-- Single sign-on buttons -->
-                <div class="mt-8 flex items-center space-x-4">
-                    <button class="flex-auto" type="button" mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:facebook'"
-                        ></mat-icon>
-                    </button>
-                    <button class="flex-auto" type="button" mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:twitter'"
-                        ></mat-icon>
-                    </button>
-                    <button class="flex-auto" type="button" mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:github'"
-                        ></mat-icon>
-                    </button>
-                </div>
             </form>
+
+            
         </div>
     </div>
 </div>
