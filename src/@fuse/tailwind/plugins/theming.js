@@ -328,7 +328,7 @@ const theming = plugin.withOptions(
                 fuse: {
                     customProps: {
                         background: {
-                            dark: {
+                            light: {
                                 'bg-app-bar': '#FFFFFF',
                                 'bg-card': '#FFFFFF',
                                 'bg-default': colors.slate[100],
@@ -338,7 +338,7 @@ const theming = plugin.withOptions(
                                     .css(),
                                 'bg-status-bar': colors.slate[300],
                             },
-                            light: {
+                            dark: {
                                 'bg-app-bar': colors.slate[900],
                                 'bg-card': colors.slate[800],
                                 'bg-default': colors.slate[900],
@@ -348,7 +348,7 @@ const theming = plugin.withOptions(
                             },
                         },
                         foreground: {
-                            dark: {
+                            light: {
                                 'text-default': colors.slate[800],
                                 'text-secondary': colors.slate[500],
                                 'text-hint': colors.slate[400],
@@ -358,7 +358,7 @@ const theming = plugin.withOptions(
                                 icon: colors.slate[500],
                                 'mat-icon': colors.slate[500],
                             },
-                            light: {
+                            dark: {
                                 'text-default': '#FFFFFF',
                                 'text-secondary': colors.slate[400],
                                 'text-hint': colors.slate[500],
