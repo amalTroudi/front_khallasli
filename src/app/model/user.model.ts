@@ -1,4 +1,4 @@
-export interface UserEntity {
+export class UserEntity {
     id: number;
     name: string;
     email: string;
@@ -6,7 +6,7 @@ export interface UserEntity {
     accessToken?: string; // Optionnel
     roles: string[]; // Tableau de rôles, par exemple ['admin', 'user']
 }
-export interface AddUserParams {
+export class AddUserParams {
     name: string;
     email: string;
     password: string;
