@@ -4,8 +4,6 @@ import { ConfirmationRequiredFullscreenReversedComponent } from 'app/modules/adm
 import { ConfirmationRequiredFullscreenComponent } from 'app/modules/admin/pages/authentication/confirmation-required/fullscreen/confirmation-required.component';
 import { ConfirmationRequiredModernReversedComponent } from 'app/modules/admin/pages/authentication/confirmation-required/modern-reversed/confirmation-required.component';
 import { ConfirmationRequiredModernComponent } from 'app/modules/admin/pages/authentication/confirmation-required/modern/confirmation-required.component';
-import { ConfirmationRequiredSplitScreenReversedComponent } from 'app/modules/admin/pages/authentication/confirmation-required/split-screen-reversed/confirmation-required.component';
-import { ConfirmationRequiredSplitScreenComponent } from 'app/modules/admin/pages/authentication/confirmation-required/split-screen/confirmation-required.component';
 import { ForgotPasswordClassicComponent } from 'app/modules/admin/pages/authentication/forgot-password/classic/forgot-password.component';
 import { ForgotPasswordFullscreenReversedComponent } from 'app/modules/admin/pages/authentication/forgot-password/fullscreen-reversed/forgot-password.component';
 import { ForgotPasswordFullscreenComponent } from 'app/modules/admin/pages/authentication/forgot-password/fullscreen/forgot-password.component';
@@ -20,13 +18,6 @@ import { ResetPasswordModernReversedComponent } from 'app/modules/admin/pages/au
 import { ResetPasswordModernComponent } from 'app/modules/admin/pages/authentication/reset-password/modern/reset-password.component';
 import { ResetPasswordSplitScreenReversedComponent } from 'app/modules/admin/pages/authentication/reset-password/split-screen-reversed/reset-password.component';
 import { ResetPasswordSplitScreenComponent } from 'app/modules/admin/pages/authentication/reset-password/split-screen/reset-password.component';
-import { SignInClassicComponent } from 'app/modules/admin/pages/authentication/sign-in/classic/sign-in.component';
-import { SignInFullscreenReversedComponent } from 'app/modules/admin/pages/authentication/sign-in/fullscreen-reversed/sign-in.component';
-import { SignInFullscreenComponent } from 'app/modules/admin/pages/authentication/sign-in/fullscreen/sign-in.component';
-import { SignInModernReversedComponent } from 'app/modules/admin/pages/authentication/sign-in/modern-reversed/sign-in.component';
-import { SignInModernComponent } from 'app/modules/admin/pages/authentication/sign-in/modern/sign-in.component';
-import { SignInSplitScreenReversedComponent } from 'app/modules/admin/pages/authentication/sign-in/split-screen-reversed/sign-in.component';
-import { SignInSplitScreenComponent } from 'app/modules/admin/pages/authentication/sign-in/split-screen/sign-in.component';
 import { SignOutClassicComponent } from 'app/modules/admin/pages/authentication/sign-out/classic/sign-out.component';
 import { SignOutFullscreenReversedComponent } from 'app/modules/admin/pages/authentication/sign-out/fullscreen-reversed/sign-out.component';
 import { SignOutFullscreenComponent } from 'app/modules/admin/pages/authentication/sign-out/fullscreen/sign-out.component';
@@ -50,40 +41,6 @@ import { UnlockSessionSplitScreenReversedComponent } from 'app/modules/admin/pag
 import { UnlockSessionSplitScreenComponent } from 'app/modules/admin/pages/authentication/unlock-session/split-screen/unlock-session.component';
 
 export default [
-    // Sign in
-    {
-        path: 'sign-in',
-        children: [
-            {
-                path: 'classic',
-                component: SignInClassicComponent,
-            },
-            {
-                path: 'modern',
-                component: SignInModernComponent,
-            },
-            {
-                path: 'modern-reversed',
-                component: SignInModernReversedComponent,
-            },
-            {
-                path: 'split-screen',
-                component: SignInSplitScreenComponent,
-            },
-            {
-                path: 'split-screen-reversed',
-                component: SignInSplitScreenReversedComponent,
-            },
-            {
-                path: 'fullscreen',
-                component: SignInFullscreenComponent,
-            },
-            {
-                path: 'fullscreen-reversed',
-                component: SignInFullscreenReversedComponent,
-            },
-        ],
-    },
     // Sign up
     {
         path: 'sign-up',
@@ -270,14 +227,14 @@ export default [
                 path: 'modern-reversed',
                 component: ConfirmationRequiredModernReversedComponent,
             },
-            {
-                path: 'split-screen',
-                component: ConfirmationRequiredSplitScreenComponent,
-            },
-            {
-                path: 'split-screen-reversed',
-                component: ConfirmationRequiredSplitScreenReversedComponent,
-            },
+            // {
+            //     path: 'split-screen',
+            //     component: ConfirmationRequiredSplitScreenComponent,
+            // },
+            // {
+            //     path: 'split-screen-reversed',
+            //     component: ConfirmationRequiredSplitScreenReversedComponent,
+            // },
             {
                 path: 'fullscreen',
                 component: ConfirmationRequiredFullscreenComponent,
