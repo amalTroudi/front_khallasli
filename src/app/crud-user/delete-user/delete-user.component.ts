@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UserEntity } from 'app/model/user.model';
+import { User } from 'app/model/user.model';
 import { UserService } from 'app/services/user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from 'app/services/user.service';
   styleUrl: './delete-user.component.scss'
 })
 export class DeleteUserComponent {
-  @Input() user!: UserEntity; // Utilisateur à supprimer, passé en entrée (remplace dialogRef)
+  @Input() user!: User; // Utilisateur à supprimer, passé en entrée (remplace dialogRef)
   loading = false;            // Indicateur de chargement
 
   constructor(private userService: UserService) {}  // Service utilisateur pour les requêtes HTTP

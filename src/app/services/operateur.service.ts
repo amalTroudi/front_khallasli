@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'app/environement/environement';
 import { Observable } from 'rxjs';
 
@@ -10,7 +11,7 @@ export class OperateurService {
 
   private baseUrl = `${environment.urlBackend}/operateur`; // L'URL de base de ton API
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , public router: Router) { }
 
   // Récupérer tous les opérateurs
   getAllOperateurs(): Observable<any> {

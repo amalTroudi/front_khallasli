@@ -10,11 +10,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link: '/dashboards/project',
     },
     {
-        id: 'dashboards.analytics',
+        id: 'dashboards.pdv',
         title: 'Point of sale',
         type: 'basic',
         icon: 'heroicons_outline:currency-dollar', //heroicons_outline:calculator', //'heroicons_outline:chart-pie',
-        link: '/dashboards/analytics',
+        link: '/dashboards/pdv',
     },
     {
         id: 'dashboards.bill',

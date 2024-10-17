@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'app/environement/environement';
 import { Observable } from 'rxjs';
 
@@ -10,7 +11,7 @@ export class BillService {
 
   private baseUrl = `${environment.urlBackend}/bill`; // URL de base pour l'API des factures
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , public router: Router) { }
 
   // Récupérer toutes les factures
   getAllBills(): Observable<any> {

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'app/environement/environement';
 import { PdvEntity, PdvParams } from 'app/model/pdv.model';
 import { Observable } from 'rxjs';
@@ -11,7 +12,7 @@ export class PdvService {
 
   private apiUrl = environment.urlBackend + '/pdv';  // URL de base de ton API PDV
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , public router: Router) { }
 
   // Récupérer tous les PDVs
   getAllPdvs(): Observable<any> {

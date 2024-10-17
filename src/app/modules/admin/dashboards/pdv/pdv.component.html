@@ -1,0 +1,48 @@
+<mat-table [dataSource]="dataSource">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="id_pdv">
+      <mat-header-cell *matHeaderCellDef> Sale Point ID  </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id_pdv}} </mat-cell>
+    </ng-container>
+  
+    <!-- Age Definition -->
+    <ng-container matColumnDef="id_commercial">
+      <mat-header-cell *matHeaderCellDef> Comercial ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id_commercial}} </mat-cell>
+    </ng-container>
+  
+    <!-- Title Definition -->
+    <ng-container matColumnDef="pos">
+      <mat-header-cell *matHeaderCellDef> Pos </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.pos}} </mat-cell>
+    </ng-container>
+     <!-- Title Definition -->
+     <ng-container matColumnDef="code_comptable">
+        <mat-header-cell *matHeaderCellDef> Accounting code </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.code_comptable}} </mat-cell>
+      </ng-container>
+       <!-- Title Definition -->
+    <ng-container matColumnDef="ville">
+        <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.ville}} </mat-cell>
+      </ng-container>
+       <!-- Title Definition -->
+    <ng-container matColumnDef="id_categorie">
+        <mat-header-cell *matHeaderCellDef> Category ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id_categorie}} </mat-cell>
+      </ng-container>
+        <!-- Title Definition -->
+    <ng-container matColumnDef="region">
+        <mat-header-cell *matHeaderCellDef> Region </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.region}} </mat-cell>
+      </ng-container>
+        <!-- Title Definition -->
+    <ng-container matColumnDef="etat">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.etat}} </mat-cell>
+      </ng-container>
+  
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['id_pdv', 'id_commercial', 'pos','code_comptable','ville','id_categorie','region','etat']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id_pdv', 'id_commercial', 'pos','code_comptable','ville','id_categorie','region','etat']"></mat-row>
+  </mat-table>

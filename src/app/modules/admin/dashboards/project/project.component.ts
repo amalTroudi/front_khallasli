@@ -15,7 +15,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
 import { TranslocoModule } from '@ngneat/transloco';
+import { User } from 'app/model/user.model';
 import { ProjectService } from 'app/modules/admin/dashboards/project/project.service';
+import { UserService } from 'app/services/user.service';
 import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -47,6 +49,10 @@ export class ProjectComponent implements OnInit, OnDestroy {
     chartMonthlyExpenses: ApexOptions = {};
     chartYearlyExpenses: ApexOptions = {};
     data: any;
+    pdvData  : any ; 
+    leadsData : any ; 
+    categoriesData :any ; 
+    transactionData : any ;
     selectedProject: string = 'ACME Corp. Backend App';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -55,7 +61,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _projectService: ProjectService,
-        private _router: Router
+        private _router: Router , 
+        private pdv : UserService ,
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -66,13 +73,21 @@ export class ProjectComponent implements OnInit, OnDestroy {
      * On init
      */
     ngOnInit(): void {
+        // get all users 
+        // this.userService.getUsers().subscribe(data=>{
+        //     console.log(data)
+        // })
         // Get the data
         this._projectService.data$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((data) => {
                 // Store the data
                 this.data = data;
-
+                this.pdvData = data.pdv;
+                this.leadsData= data.leads; 
+                this.categoriesData = data.categories;
+                this.transactionData = data.organization;//TODO
+                console.log(data); 
                 // Prepare the chart data
                 this._prepareChartData();
             });

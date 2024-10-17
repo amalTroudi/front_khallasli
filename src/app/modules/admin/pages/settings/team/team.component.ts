@@ -47,9 +47,9 @@ export class SettingsTeamComponent implements OnInit {
     ngOnInit(): void {
         // Setup the team members
         this.members = [
+            
             {
-                avatar: 'images/avatars/male-01.jpg',
-                name: 'Dejesus Michael',
+                name: '',
                 email: 'dejesusmichael@mail.org',
                 role: 'admin',
             },
@@ -90,6 +90,7 @@ export class SettingsTeamComponent implements OnInit {
                 role: 'read',
             },
         ];
+        
 
         // Setup the roles
         this.roles = [

@@ -1,45 +1,43 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'app/environement/environement';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'app/environement/environement';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AlimentationCommerialPdvService {
+export class AlimentationCommercialPdvService {
+  private apiUrl = environment.urlBackend +'/alimentaionCommercialPdv'; // URL du backend
 
- 
-  private baseUrl = `${environment.urlBackend}/alimentaionCommercialPdv`; // URL de base pour l'API
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  // Récupérer toutes les alimentations commerciales des PDV
+  // Obtenir toutes les activités
   getAllAlimentationCommercialPdv(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/all`);
+    return this.http.get(`${this.apiUrl}/all`);
   }
 
-  // Récupérer les alimentations commerciales des PDV triées par montant croissant
-  getAlimentationCommercialPdvSortedByMontantAs(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/sortedByMontantAs`);
+  // Obtenir les activités triées par montant croissant
+  getSortedByMontantAs(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/sortedByMontantAs`);
   }
 
-  // Récupérer les alimentations commerciales des PDV triées par montant décroissant
-  getAlimentationCommercialPdvSortedByMontantDesc(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/desc`);
+  // Obtenir les activités triées par montant décroissant
+  getSortedByMontantDesc(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/desc`);
   }
 
-  // Récupérer les alimentations commerciales des PDV par statut
-  getAlimentationCommercialPdvByStatus(status: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/${status}`);
+  // Obtenir les activités par statut
+  getByStatus(status: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${status}`);
   }
 
-  // Compter le nombre d'alimentations commerciales des PDV par statut
-  countAlimentationCommercialPdvByStatus(status: number): Observable<number> {
-    return this.http.get<number>(`${this.baseUrl}/count/${status}`);
+  // Compter les activités par statut
+  countByStatus(status: number): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/count/${status}`);
   }
 
-  // Récupérer une alimentation commerciale de PDV par ID
-  getAlimentationCommercialPdvById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/${id}`);
+  // Obtenir une activité par ID
+  getById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
   }
 }

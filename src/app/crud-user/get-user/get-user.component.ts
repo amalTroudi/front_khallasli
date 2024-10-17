@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserEntity } from 'app/model/user.model';
+import { User } from 'app/model/user.model';
 import { UserService } from 'app/services/user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from 'app/services/user.service';
   styleUrl: './get-user.component.scss'
 })
 export class GetUserComponent {
-  users: UserEntity[] = []; // Variable pour stocker la liste des utilisateurs
+  users: User[] = []; // Variable pour stocker la liste des utilisateurs
 
   constructor(private userService: UserService) { } // Injecte le service utilisateur
 
@@ -21,7 +21,7 @@ export class GetUserComponent {
   // Méthode pour récupérer tous les utilisateurs
   getUsers(): void {
     this.userService.getUsers().subscribe({
-      next: (response: UserEntity[]) => {
+      next: (response: User[]) => {
         this.users = response; // Assigne la réponse à la variable users
         console.log('Utilisateurs récupérés avec succès', this.users);
       },

@@ -1,14 +1,14 @@
-export class UserEntity {
+export class User {
     id: number;
     name: string;
     email: string;
     password: string;
-    accessToken?: string; // Optionnel
-    roles: string[]; // Tableau de rôles, par exemple ['admin', 'user']
+    accessToken?: string; 
+    roles: string[]; 
 }
 export class AddUserParams {
     name: string;
     email: string;
     password: string;
-    roles: string[]; // Tableau de rôles
+    roles: string[]; 
 }

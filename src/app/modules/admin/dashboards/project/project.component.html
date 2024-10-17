@@ -38,7 +38,7 @@
                         <div
                             class="grid w-full min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4"
                         >
-                            <!-- Summary - PDU -->
+                            <!-- Summary - PDV -->
                             <div
                                 class="bg-card flex flex-auto flex-col overflow-hidden rounded-2xl p-6 shadow"
                             >
@@ -46,7 +46,7 @@
                                     <div
                                         class="truncate text-lg font-medium leading-6 tracking-tight"
                                     >
-                                        PDU
+                                        PDV
                                     </div>
                                     <!-- <div class="-mr-3 -mt-2 ml-2">
                                         <button
@@ -77,7 +77,7 @@
                                     <div
                                         class="text-7xl font-bold leading-none tracking-tight text-blue-500 sm:text-8xl"
                                     >
-                                        8
+                                        {{ pdvData.length}}
                                     </div>
                                     <!-- <div
                                         class="text-lg font-medium text-blue-600 dark:text-blue-500"
@@ -115,7 +115,7 @@
                                     <div
                                         class="text-7xl font-bold leading-none tracking-tight text-red-500 sm:text-8xl"
                                     >
-                                        1
+                                        {{leadsData.length}}
                                     </div>
                                     <!-- <div
                                         class="text-lg font-medium text-red-600 dark:text-red-500"
@@ -153,7 +153,7 @@
                                     <div
                                         class="text-7xl font-bold leading-none tracking-tight text-amber-500 sm:text-8xl"
                                     >
-                                        10
+                                    {{categoriesData.length}}
                                     </div>
                                     <!-- <div
                                         class="text-lg font-medium text-amber-600 dark:text-amber-500"
@@ -188,11 +188,11 @@
                                     </div>
                                 </div>
                                 <div class="mt-2 flex flex-col items-center">
-                                    <!-- <div
+                                    <div
                                         class="text-7xl font-bold leading-none tracking-tight text-green-500 sm:text-8xl"
                                     >
-                                        38
-                                    </div> -->
+                                    {{transactionData.length}}
+                                    </div>
                                 </div>
                             </div>
 

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'app/environement/environement';
 import { OrganisationModel } from 'app/model/organisation.model';
 import { Observable } from 'rxjs';
@@ -11,7 +12,7 @@ export class OrganisationService {
 
   private apiUrl = environment.urlBackend + '/organisation';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , public router: Router) { }
 
   // Méthode pour obtenir toutes les organisations
   getAllOrganisations(): Observable<OrganisationModel[]> {

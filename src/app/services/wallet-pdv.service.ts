@@ -10,7 +10,7 @@ export class WalletPdvService {
 
   private apiUrl = environment.urlBackend + '/walletPdv';  // URL de base de ton API walletPdv
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,) { }
 
   // Récupérer tous les wallet PDV
   getAllWalletPdv(): Observable<any> {

@@ -1,5 +1,5 @@
 import { provideHttpClient } from '@angular/common/http';
-import { APP_INITIALIZER, ApplicationConfig, inject } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, inject, importProvidersFrom } from '@angular/core';
 import { LuxonDateAdapter } from '@angular/material-luxon-adapter';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -9,6 +9,7 @@ import {
     withInMemoryScrolling,
     withPreloading,
 } from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
 import { provideFuse } from '@fuse';
 import { TranslocoService, provideTransloco } from '@ngneat/transloco';
 import { appRoutes } from 'app/app.routes';
@@ -20,6 +21,14 @@ import { firstValueFrom } from 'rxjs';
 
 export const appConfig: ApplicationConfig = {
     providers: [
+        importProvidersFrom([
+          JwtModule.forRoot({
+                config: {
+                    tokenGetter: () => localStorage.getItem('token'),
+                },
+            }),
+        ]),
+
         provideAnimations(),
         provideHttpClient(),
         provideRouter(

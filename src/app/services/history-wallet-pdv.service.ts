@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'app/environement/environement';
 import { Observable } from 'rxjs';
 
@@ -10,7 +11,7 @@ export class HistoryWalletPdvService {
 
   private baseUrl = `${environment.urlBackend}/historyWalletPdv`; // URL de base pour l'API historyWalletPdv
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , public router: Router) { }
 
   // Récupérer tous les historiques
   getAllHistoryWalletPdv(): Observable<any> {
