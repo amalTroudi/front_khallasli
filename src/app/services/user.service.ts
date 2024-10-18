@@ -23,7 +23,7 @@ export class UserService {
      // Remplacez par votre hôte
   });
 
-  return this.http.post('http://localhost:4100/get-users', data, { headers });
+  return this.http.post('http://localhost:9000/get-users', data, { headers });
 }
  
 
@@ -38,7 +38,7 @@ export class UserService {
       // Vous pouvez ajouter d'autres en-têtes ici
     });
 
-    return this.http.get<User[]> ('http://localhost:4100/get-users', { headers });
+    return this.http.get<User[]> ('http://localhost:9000/get-users', { headers });
   }
  
 

@@ -49,6 +49,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
     chartMonthlyExpenses: ApexOptions = {};
     chartYearlyExpenses: ApexOptions = {};
     data: any;
+    users: any;
     pdvData  : any ; 
     leadsData : any ; 
     categoriesData :any ; 
@@ -62,7 +63,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
     constructor(
         private _projectService: ProjectService,
         private _router: Router , 
-        private pdv : UserService ,
+        private userService : UserService ,
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -74,9 +75,10 @@ export class ProjectComponent implements OnInit, OnDestroy {
      */
     ngOnInit(): void {
         // get all users 
-        // this.userService.getUsers().subscribe(data=>{
-        //     console.log(data)
-        // })
+        this.userService.getUsers().subscribe(data=>{
+            console.log(data)
+            this.users = data;
+        })
         // Get the data
         this._projectService.data$
             .pipe(takeUntil(this._unsubscribeAll))
